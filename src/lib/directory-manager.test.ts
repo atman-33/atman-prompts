@@ -5,7 +5,7 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import {
   createDirectoryStructure,
   ensureDirectoryExists,
-} from './directory-manager';
+} from './directory-manager.js';
 
 describe('directory-manager', () => {
   let tempDir: string;
