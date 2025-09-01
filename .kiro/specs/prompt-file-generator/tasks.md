@@ -32,7 +32,7 @@
   - Write basic tests for template loading functionality
   - _Requirements: 1.3, 3.1, 3.2_
 
-- [ ] 6. Implement CLI entry point and argument parsing
+- [x] 6. Implement CLI entry point and argument parsing
   - Create index.ts with main function and CLI argument parsing
   - Add shebang for npx compatibility
   - Implement basic command execution flow
