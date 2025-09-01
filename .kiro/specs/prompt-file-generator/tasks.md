@@ -13,7 +13,7 @@
   - Add at least 3-4 basic prompt templates (system-prompt.md, code-review.md, documentation.md, debugging.md)
   - _Requirements: 1.3, 4.1, 4.3_
 
-- [ ] 3. Implement core file system utilities
+- [x] 3. Implement core file system utilities
   - Create file-operations.ts with checkFileExists and createFileIfNotExists functions using arrow functions
   - Implement basic error handling for file system operations
   - Write minimal happy path tests for file operations
