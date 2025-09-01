@@ -19,7 +19,7 @@
   - Write minimal happy path tests for file operations
   - _Requirements: 2.1, 2.2, 3.1, 3.2_
 
-- [ ] 4. Implement directory management functionality
+- [x] 4. Implement directory management functionality
   - Create directory-manager.ts with createDirectoryStructure and ensureDirectoryExists functions
   - Implement .prompts directory creation with en/ja subdirectories
   - Write basic tests for directory creation functionality
