@@ -1,7 +1,7 @@
 # Implementation Plan
 
-- [ ] 1. Set up project structure and development environment
-  - Initialize TypeScript configuration with ES2020 target
+- [x] 1. Set up project structure and development environment
+  - Initialize TypeScript configuration with ES2022 target
   - Configure Biome for linting and formatting with biome.json
   - Set up Vitest configuration for testing
   - Create basic package.json with bin configuration and scripts

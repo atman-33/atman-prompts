@@ -247,7 +247,7 @@ const discoverTemplateFiles = (language: string): Promise<readonly string[]> => 
 ```
 
 ### Build Configuration
-- **TypeScript compilation**: Target ES2020 for modern Node.js compatibility
+- **TypeScript compilation**: Target ES2022 for modern Node.js compatibility
 - **Shebang handling**: Ensure executable has proper shebang for cross-platform compatibility
 - **Dependency bundling**: Include only necessary runtime dependencies
 - **Template inclusion**: Ensure templates/ directory is included in the build output
