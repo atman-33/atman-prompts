@@ -1,0 +1,43 @@
+{
+  "name": "npx-command-boilerplate",
+  "version": "0.1.0",
+  "description": "",
+  "author": "atman-33",
+  "license": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "lint": "biome lint src/",
+    "lint:fix": "biome lint --write src/",
+    "format": "biome format --write src/",
+    "check": "biome check --write src/",
+    "prepare": "husky"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "homepage": "",
+  "bin": {
+    "my-npx-command": "dist/index.js"
+  },
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "package.json",
+    "LICENSE"
+  ],
+  "devDependencies": {
+    "@biomejs/biome": "2.2.2",
+    "@types/node": "^22.10.2",
+    "husky": "^9.1.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "commander": "^13.0.0"
+  }
+}
