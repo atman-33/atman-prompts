@@ -28,13 +28,6 @@ type CliOptions = {
   readonly verbose: boolean;
 };
 
-type GenerationResult = {
-  readonly totalFiles: number;
-  readonly createdFiles: readonly string[];
-  readonly skippedFiles: readonly string[];
-  readonly errors: readonly string[];
-};
-
 /**
  * Generate prompt files for a specific language
  */
@@ -223,7 +216,5 @@ const setupCli = (): void => {
   program.parse();
 };
 
-// Execute CLI if this file is run directly
-if (import.meta.url === `file://${process.argv[1]}`) {
-  setupCli();
-}
+// Execute CLI - always run when this module is executed
+setupCli();
