@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import type { FileCreationResult } from './logger.js';
+import type { FileCreationResult } from './file-operations.js';
 import {
   log,
   logDirectoryCreation,

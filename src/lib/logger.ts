@@ -3,22 +3,15 @@
  * Provides structured logging with different levels and result reporting.
  */
 
-export type LogLevel = 'info' | 'success' | 'warning' | 'error';
+import type { FileCreationResult } from './file-operations.js';
 
-export type FileCreationResult = {
-  readonly success: boolean;
-  readonly path: string;
-  readonly skipped: boolean;
-  readonly error?: string;
-};
+export type LogLevel = 'info' | 'success' | 'warning' | 'error';
 
 /**
  * Log a message with the specified level and appropriate formatting.
  * Uses console methods with color coding for different log levels.
  */
 export const log = (level: LogLevel, message: string): void => {
-  const _timestamp = new Date().toISOString();
-
   switch (level) {
     case 'info':
       console.log(`ℹ️  ${message}`);

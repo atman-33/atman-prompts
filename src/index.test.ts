@@ -35,11 +35,9 @@ describe('CLI Integration Tests', () => {
       });
 
       // Verify the output contains expected messages
-      expect(output).toContain('🚀 Generating prompt files...');
-      expect(output).toContain('📁 Created directory structure: .prompts');
-      expect(output).toContain(
-        '🎉 Prompt file generation completed successfully!',
-      );
+      expect(output).toContain('ℹ️  Starting atman-prompts file generation...');
+      expect(output).toContain('✅ Created directory: .prompts');
+      expect(output).toContain('✅ All operations completed successfully!');
 
       // Verify directory structure was created
       const promptsDir = join(tempDir, '.prompts');
@@ -87,9 +85,7 @@ describe('CLI Integration Tests', () => {
     });
 
     // Should still complete successfully
-    expect(output).toContain(
-      '🎉 Prompt file generation completed successfully!',
-    );
+    expect(output).toContain('✅ All operations completed successfully!');
 
     // The exact behavior for skipped files depends on implementation
     // but it should not fail
@@ -153,9 +149,7 @@ describe('CLI Integration Tests', () => {
         cwd: tempDir,
       },
     );
-    expect(customOutput).toContain(
-      '📁 Created directory structure: custom-prompts',
-    );
+    expect(customOutput).toContain('✅ Created directory: custom-prompts');
 
     // Verify custom directory was created
     const customDir = join(tempDir, 'custom-prompts');
@@ -175,11 +169,9 @@ describe('CLI Integration Tests', () => {
       cwd: tempDir,
     });
 
-    expect(verboseOutput).toContain(
-      'Starting prompt file generation with options:',
-    );
-    expect(verboseOutput).toContain('Loading templates for language:');
-    expect(verboseOutput).toContain('Found 4 templates for');
-    expect(verboseOutput).toContain('Created file:');
+    expect(verboseOutput).toContain('Starting with options:');
+    expect(verboseOutput).toContain('ℹ️  Loading templates for language:');
+    expect(verboseOutput).toContain('ℹ️  Loaded 4 template files for language:');
+    expect(verboseOutput).toContain('✅ Created file:');
   });
 });
