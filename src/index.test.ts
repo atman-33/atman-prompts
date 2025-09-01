@@ -122,4 +122,64 @@ describe('CLI Integration Tests', () => {
       }
     }
   });
+
+  it('should support CLI options with commander', async () => {
+    // Build the project first
+    execSync('npm run build', { cwd: originalCwd });
+    const cliPath = join(originalCwd, 'dist', 'index.js');
+
+    // Test --help option
+    const helpOutput = execSync(`node ${cliPath} --help`, {
+      encoding: 'utf-8',
+      cwd: tempDir,
+    });
+    expect(helpOutput).toContain('CLI tool to generate prompt files');
+    expect(helpOutput).toContain('--output-dir');
+    expect(helpOutput).toContain('--languages');
+    expect(helpOutput).toContain('--verbose');
+
+    // Test --version option
+    const versionOutput = execSync(`node ${cliPath} --version`, {
+      encoding: 'utf-8',
+      cwd: tempDir,
+    });
+    expect(versionOutput.trim()).toBe('0.1.0');
+
+    // Test custom output directory
+    const customOutput = execSync(
+      `node ${cliPath} --output-dir custom-prompts`,
+      {
+        encoding: 'utf-8',
+        cwd: tempDir,
+      },
+    );
+    expect(customOutput).toContain(
+      '📁 Created directory structure: custom-prompts',
+    );
+
+    // Verify custom directory was created
+    const customDir = join(tempDir, 'custom-prompts');
+    const customDirContents = await readdir(customDir);
+    expect(customDirContents).toContain('en');
+    expect(customDirContents).toContain('ja');
+  });
+
+  it('should support verbose mode', async () => {
+    // Build the project first
+    execSync('npm run build', { cwd: originalCwd });
+    const cliPath = join(originalCwd, 'dist', 'index.js');
+
+    // Test verbose output
+    const verboseOutput = execSync(`node ${cliPath} --verbose`, {
+      encoding: 'utf-8',
+      cwd: tempDir,
+    });
+
+    expect(verboseOutput).toContain(
+      'Starting prompt file generation with options:',
+    );
+    expect(verboseOutput).toContain('Loading templates for language:');
+    expect(verboseOutput).toContain('Found 4 templates for');
+    expect(verboseOutput).toContain('Created file:');
+  });
 });
