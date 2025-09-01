@@ -7,7 +7,7 @@
   - Create basic package.json with bin configuration and scripts
   - _Requirements: 3.3, 5.1, 5.3_
 
-- [ ] 2. Create template files in repository
+- [x] 2. Create template files in repository
   - Create templates/en/ directory with sample prompt markdown files
   - Create templates/ja/ directory with corresponding Japanese prompt files
   - Add at least 3-4 basic prompt templates (system-prompt.md, code-review.md, documentation.md, debugging.md)
