@@ -1,6 +1,7 @@
 {
   "name": "atman-prompts",
   "version": "0.1.0",
+  "type": "module",
   "description": "CLI tool to generate prompt files in a structured directory format",
   "author": "atman-33",
   "license": "MIT",
