@@ -1,0 +1,23 @@
+name: CI
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - run: npm ci
+
+      # - name: Copy example env files
+        # run: |
+        #   cp .env.example .env
+        #   cp .env.example .dev.vars
+
+      - run: npm run build
+      - run: npm run check
