@@ -1,41 +1,50 @@
 {
-  "name": "npx-command-boilerplate",
-  "version": "0.1.0",
-  "description": "",
+  "name": "atman-prompts",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "CLI tool to generate prompt files in a structured directory format",
   "author": "atman-33",
-  "license": "",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "start": "node dist/index.js",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
     "lint": "biome lint src/",
-    "lint:fix": "biome lint --write src/",
     "format": "biome format --write src/",
-    "check": "biome check --write src/",
+    "check": "biome check src/",
     "prepare": "husky"
   },
-  "keywords": [],
+  "keywords": [
+    "cli",
+    "prompts",
+    "generator",
+    "templates"
+  ],
   "repository": {
-    "type": "",
-    "url": ""
+    "type": "git",
+    "url": "git+https://github.com/atman-33/atman-prompts.git"
   },
-  "homepage": "",
+  "homepage": "https://github.com/atman-33/atman-prompts#readme",
   "bin": {
-    "my-npx-command": "dist/index.js"
+    "atman-prompts": "dist/index.js"
   },
   "types": "dist/index.d.ts",
   "files": [
-    "dist",
-    "README.md",
-    "package.json",
-    "LICENSE"
+    "dist/",
+    "templates/",
+    "README.md"
   ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "devDependencies": {
     "@biomejs/biome": "2.2.2",
     "@types/node": "^22.10.2",
+    "@vitest/coverage-v8": "^2.1.9",
     "husky": "^9.1.7",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
   },
   "dependencies": {
     "commander": "^13.0.0"

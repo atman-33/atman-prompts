@@ -13,10 +13,10 @@
     "editor.defaultFormatter": "biomejs.biome"
   },
   "editor.codeActionsOnSave": {
-    "quickfix.biome": "explicit",
-    "source.fixAll.ts": "explicit",
+    "quickfix.biome": "never",
+    "source.fixAll.ts": "never",
     "source.sortImports": "never",
     "source.organizeImports": "never",
-    "source.organizeImports.biome": "explicit"
+    "source.organizeImports.biome": "never"
   }
 }
