@@ -1,6 +1,6 @@
 {
   "name": "atman-prompts",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "type": "module",
   "description": "CLI tool to generate prompt files in a structured directory format",
   "author": "atman-33",
@@ -14,12 +14,17 @@
     "check": "biome check src/",
     "prepare": "husky"
   },
-  "keywords": [],
+  "keywords": [
+    "cli",
+    "prompts",
+    "generator",
+    "templates"
+  ],
   "repository": {
-    "type": "",
-    "url": ""
+    "type": "git",
+    "url": "git+https://github.com/atman-33/atman-prompts.git"
   },
-  "homepage": "",
+  "homepage": "https://github.com/atman-33/atman-prompts#readme",
   "bin": {
     "atman-prompts": "dist/index.js"
   },
@@ -35,6 +40,7 @@
   "devDependencies": {
     "@biomejs/biome": "2.2.2",
     "@types/node": "^22.10.2",
+    "@vitest/coverage-v8": "^2.1.9",
     "husky": "^9.1.7",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2",
